@@ -21,7 +21,6 @@ collections:
        - { label: "Start Date", name: "start-date", widget: "datetime", default: "" }
        - { label: "Audience", name: "audience", widget: "string", default: "" }
        - { label: "Cost", name: "cost", widget: "string", default: "Free" }
-
        - { label: "Description", name: "description", widget: "markdown", default: "" }
   - name: "event-type"
     label: "Event Type"

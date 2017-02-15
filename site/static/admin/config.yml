@@ -11,7 +11,7 @@ public_folder: "/images/uploads" # The src attribute for uploaded media will beg
 collections:
   - name: "event"
     label: "Event"
-    folder: "content/events"
+    folder: "site/content/events"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -24,7 +24,7 @@ collections:
        - { label: "Description", name: "description", widget: "markdown", default: "" }
   - name: "event-type"
     label: "Event Type"
-    folder: "content/event-types"
+    folder: "site/content/event-types"
     create: true
     slug: "{{slug}}"
     fields:

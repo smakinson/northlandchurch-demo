@@ -5,7 +5,7 @@ backend:
   branch: master
 
 publish_mode: editorial_workflow
-media_folder: "static/images/uploads" # Media files will be stored in the repo under images/uploads
+media_folder: "site/static/images/uploads" # Media files will be stored in the repo under images/uploads
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
 
 collections:
@@ -16,6 +16,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
        - { label: "Title", name: "title", widget: "string", default: "" }
+       - { label: "Event Type", name: "event-type", widget: "string", default: "" }
        - { label: "Main Image", name: "main-image", widget: "image", default: "" }
        - { label: "Event Type", name: "event-type", widget: "string", default: "" }
        - { label: "Start Date", name: "start-date", widget: "datetime", default: "" }

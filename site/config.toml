@@ -1,3 +1,21 @@
+# Config docs: https://gohugo.io/overview/configuration/
+
 baseurl = "/"
 languageCode = "en-us"
 title = "Northland Church Demo"
+
+# Do not inject generator meta tag on homepage.
+disableHugoGeneratorInject = true
+
+
+[taxonomies]
+event-type = "event-types"
+
+
+# Define to add Google Analytics to the page. ( UA-XXXXX-X )
+# https://gohugo.io/extras/analytics/
+googleAnalytics = ""
+
+# Define to add Disqus Comments.
+# https://gohugo.io/extras/comments/
+disqusShortname = ""

@@ -2,6 +2,7 @@
 title: "Adult Baptism"
 date: 2017-03-12T14:00:00.847Z
 type: event
+featured: false
 eventTypes: 
   - baptism
 mainImage: /images/uploads/adult-baptism-image.jpg

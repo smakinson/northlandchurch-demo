@@ -2,6 +2,7 @@
 title: "Women's Bible Study"
 date: 2017-03-08T09:00:45.847Z
 type: event
+featured: true
 eventTypes: 
   - bible-studies
 mainImage: /images/uploads/womens-biblestudy-image.jpg

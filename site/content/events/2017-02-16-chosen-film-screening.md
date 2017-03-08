@@ -2,6 +2,7 @@
 title: "Chosen Film Screening"
 date: 2017-02-11T18:30:00.847Z
 type: event
+featured: true
 eventTypes: 
   - concerts-events
 mainImage: /images/uploads/chosen-film-image.jpg

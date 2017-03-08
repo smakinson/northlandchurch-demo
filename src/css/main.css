@@ -101,7 +101,6 @@ a:hover, a:active, a:focus {
     background-color: var(--light-gray);
   }
 
-
 }
 
 /* ==========================================================================
@@ -269,4 +268,10 @@ a:hover, a:active, a:focus {
   .h6-l {
     height: 22rem;
   }
+}
+
+/* Utility */
+/* Force clear on certain floats */
+.fl-2col > div:nth-child(odd) {
+  clear: both;
 }

@@ -6,10 +6,13 @@ title = "Northland Church Demo"
 
 # Do not inject generator meta tag on homepage.
 disableHugoGeneratorInject = true
-
+metaDataFormat = "yaml"
 
 [taxonomies]
-event-type = "event-types"
+eventtype = "eventtypes"
+
+[permalinks]
+events = "calendar/:section/:year/:month/:day/:title"
 
 
 # Define to add Google Analytics to the page. ( UA-XXXXX-X )

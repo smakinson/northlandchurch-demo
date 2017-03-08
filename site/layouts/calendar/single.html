@@ -1,0 +1,90 @@
+{{ define "contentPad" }}
+
+<div class="cf w-100">
+  <main role="main">
+
+    <div class="fr w-100 w-50-m w-30-l pb4 ph3-ns pt3 nt3 bl bw1 b--gray">
+      <aside>
+        <p class="pa3 mt0 ba b--dotted h5">TODO: Calendar</p>
+        <h3 class="f3 ttu">Filters</h3>
+        <!-- TODO: Change this to look up the href -->
+        <h4><a href="eventtypes" class="link green">Event Types</a></h4>
+        <nav role="navigation">
+          <ul class="list pa0">
+            {{ range (where .Site.Pages.ByTitle "Type" "eventType") }}
+            <li><a href="{{ .RelPermalink }}" class="link db pa1 hover-bg-white ttu">{{ .Title }}</a></li>
+            {{ end }}
+          </ul>
+        </nav>
+        <h4 class="green">Audience</h4>
+        <nav role="navigation">
+          <ul class="list pa0">
+            <li>TODO</li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+    <div class="fl w-100 w-50-m w-70-l">
+      <h1>{{ .Title }}</h1>
+      <div role="list" class="pa0 mt0">
+        <!-- TODO: is this what would be featured? -->
+        {{ range $index, $element := first 8 (where (.Site.Pages.ByParam "startdate") "Type" "event") }}
+        <div role="listitem" class="fl w-100 w-50-l pb4 pr3-m pr4-l">
+
+          <a href="{{ .RelPermalink }}"
+             class="link db pa3 pb4 bg-white shadow-hover relative">
+            <article role="article">
+              <div class="bb bw2 b--light-yellow"></div>
+              <p class="fl f6 black">
+                <!-- Look up the title of the eventType for display -->
+                {{ $eventType := index .Params.eventtypes 0 }}
+
+                {{ range $index, $element := first 1 (where .Site.Pages "Params.eventtype" $eventType) }}
+                {{ .Title }}
+                {{ end }}
+              </p>
+              <!-- TODO: microformats and time tag -->
+              <p class="fr f6 ttu">
+                {{ if ne .Params.startdate nil }}
+                {{ dateFormat "Jan 2" .Params.startdate }}
+                {{ end }}
+              </p>
+              <!-- TODO: Look at partials for these images here and elsewhere -->
+              {{ if ne .Params.mainimage nil }}
+              <img role="presentation" src="{{ .Params.mainimage }}" alt="" class="w-100" style="max-height: 10em"
+                   aria-hidden="true">
+              {{ end }}
+              <h2 class="mb0">{{ .Title }}</h2>
+              <p class="mt0 f6">
+                {{ if ne .Params.startdate nil }}
+                <span class="ttl">
+                  <!-- starts -->
+                  {{ dateFormat "3:04PM" .Params.startdate }}
+                  <!-- ends -->
+                  {{ if ne .Params.enddate nil }}
+                  &ndash; {{ dateFormat "3:04PM" .Params.enddate }}
+                  {{ end }}
+                </span>
+                {{ end }}
+              </p>
+              <p class="f6">{{ .Summary }}</p>
+              <footer class="pb3">
+                <h5 class="ttu">Location <span class="fw4 ttn pl3">{{ .Params.location }}</span></h5>
+                <span class="fr dib pa2 mb3 f6 ttu bg-light-gray hover-bg-green hover-white"
+                      aria-label="Learn more about {{ .Title }}">Learn More</span>
+              </footer>
+            </article>
+          </a>
+
+        </div>
+        <!-- Incase the heights vary enough to float improperly -->
+        {{ if ne (mod $index 2) 0 }}
+        <div class="cf"></div>
+        {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </main>
+</div>
+
+{{ end }}

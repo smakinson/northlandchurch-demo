@@ -1,0 +1,100 @@
+{{ define "contentPad" }}
+
+<div class="cf w-100">
+  <main role="main">
+    <article role="article">
+      <h1>{{ .Title }}</h1>
+
+      <div class="cf bg-white relative">
+        <div class="fl w-100 w-60-l pr3-l">
+          <img role="presentation" src="{{ .Params.mainimage }}" alt="" aria-hidden="true">
+        </div>
+        <div class="fl w-100 w-40-l pt3 pb4 ph3 pl3-ns">
+          <h3 class="f5 ttu">Date &amp; Time</h3>
+          <!-- TODO: microformats and time tag(s) -->
+          <p class="pb3 f4-l">
+            {{ if ne .Params.startdate nil }}
+
+            <!-- Starting day -->
+            {{ dateFormat "Monday, Jan 2" .Params.startdate }}
+
+            {{ if ne .Params.enddate nil }}
+            <!-- If its more than one day -->
+            {{ if ne (dateFormat "Jan 2" .Params.startdate) (dateFormat "Jan 2" .Params.enddate) }}
+            &ndash; {{ dateFormat "Monday, Jan 2" .Params.enddate }}
+            {{ end }}
+            {{ end }}
+
+            <!-- If its not the current year -->
+            {{ if ne (dateFormat "2006" .Params.startdate) (dateFormat "2006" now) }}
+            <!-- Show the year -->
+            {{ dateFormat "2006" .Params.startdate }}
+            {{ end }}
+            <br>
+            <!-- The time -->
+            <span class="ttl">
+              <!-- starts -->
+              {{ dateFormat "3:04PM" .Params.startdate }}
+              <!-- ends -->
+              {{ if ne .Params.enddate nil }}
+              &ndash; {{ dateFormat "3:04PM" .Params.enddate }}
+              {{ end }}
+            </span>
+
+            {{ end }}
+          </p>
+          <h3 class="f5 ttu">Location</h3>
+          <p class="f4-l measure-narrow">{{ .Params.location }}</p>
+        </div>
+        <!-- TODO: Use a flag in the frontmatter to indicate if registration needed -->
+        <div class="ma3 ma0-ns absolute-ns bottom--1 right--1">
+          {{ partial "button" (dict "href" "#" "text" "Register &raquo;" ) }}
+        </div>
+      </div>
+      <div class="fl w-100 w-70-m w-60-l pt1 pr3-l">
+        <h3 class="f2">Overview</h3>
+        {{ .Content }}
+      </div>
+      <div class="fl w-100 w-30-l w-40-l pt1 ph3">
+        <aside>
+          <h3 class="f2">Details</h3>
+
+          <h4 class="ttu">Event Type</h4>
+          <p>{{ .Params.eventtypes }}</p>
+          {{ if ne .Params.audience nil }}
+          <h4 class="ttu">Audience</h4>
+          <p>{{ .Params.audience }}</p>
+          {{ end }}
+          {{ if ne .Params.cost nil }}
+          <h4 class="ttu">Cost</h4>
+          <p>{{ .Params.cost }}</p>
+          {{ end }}
+          {{ if ne .Params.ministry nil }}
+          <h4 class="ttu">Ministry &amp; Group</h4>
+          <p>TODO{{ .Params.ministry }}</p>
+          {{ end }}
+          {{ if ne .Params.childcare nil }}
+          <h4 class="ttu">Child Care Available</h4>
+          <p>TODO{{ .Params.childcare }}</p>
+          {{ end }}
+          {{ if ne .Params.contact nil }}
+          <h4 class="ttu">Contact Name</h4>
+          <p>TODO{{ .Params.contact }}</p>
+          {{ end }}
+
+          <h4 class="ttu">Subscribe</h4>
+          <p>TODO</p>
+
+          <h4 class="mb3 f2">Directions</h4>
+          <h4 class="f6 ttu">Getting Here</h4>
+          <iframe role="presentation"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3500.160989698727!2d-81.33674706558939!3d28.684830446037513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1488570207806"
+            width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </aside>
+      </div>
+    </article>
+  </main>
+</div>
+
+
+{{ end }}

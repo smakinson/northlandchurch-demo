@@ -1,40 +1,274 @@
-<!doctype html>
-<html class="no-js" lang="{{ .Site.LanguageCode }}" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
-<head>
-  <meta charset="utf-8">
+{{ define "contentFull" }}
 
-  <!--{ partial "meta.html" . }}-->
+<div class="cf cover bg-center"
+     style="background-image: url('/images/seeing-the-kingdom-series-1920x1080.jpg')">
+  <main role="main" class="dt w-100">
+    <a href="#" class="hero dtc w-100 pa3 pa5-ns ph6-ns white hover-white v-mid v-top-ns">
+      <article class="fl w-100 w-60-l pa2">
+        <h1 class="f32f1-ns mw5-m mw7-l">This Weekend:<br> Seeing the Kingdom</h1>
+        <p class="b">Download the <em>free</em> companion materials</p>
+      </article>
+    </a>
+  </main>
+</div>
 
-  <!--<meta http-equiv="x-ua-compatible" content="ie=edge">-->
+<div class="cf relative">
+  <section>
+    <div class="w-100 w-30-l pa4-l absolute-l right-2-l z-999" style="top: -27rem;">
 
-  <base href="{{ .Site.BaseURL }}">
-  <title>{{ .Site.Title }}</title>
-  <link rel="canonical" href="{{ .Permalink }}">
-  <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
-  <!--<meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">-->
+      <!-- TODO: Should these come from markdown content? -->
+      <div class="w-100 h5 h-auto-l pa3 mb4 tr bg-light-red relative overflow-hidden overflow-visible-l">
+        <a href="#" class="link">
+          <div class="bg-near-white b ttu pv2 ph3 absolute left--2-l top-1-l">Download Now</div>
+          <p class="w-20 near-white tl ttu f3 f2-m f5-l absolute left-2 left-1-l" style="top: 35%;">Study Guide</p>
+          <img class="w-70 mt1 shadow-1" src="/images/mockup-paperback-study-guide-closed-book.jpg"
+               alt="Seeing the Kingdom Study Guide">
+        </a>
+      </div>
 
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <!-- Place favicon.ico in the root directory -->
+      <a href="#" class="dib link pa3 pb4 ma4 mh0-l mb4 bg-white shadow-hover">
+        <h2 class="f6 pb2 bb bw2 b--light-yellow">Daily Liturgy <span class="fr fw4">March 1</span></h2>
+        <h2 class="ttu">Morning Rising</h2>
+        <div class="bb bw2 b--mid-gray w2"></div>
+        <h3 class="green ttu">Collossians 3:17</h3>
+        <p class="f6">And whatever you do, whether in word or deed, do it all in the name of the Lord Jesus, giving
+          thanks
+          to God the Father&hellip;</p>
+        <div class="tr"><span class="btn-offset link b ttu bg-light-gray">Read More</span></div>
+      </a>
 
-  <!--<link rel="stylesheet" href="css/normalize.css">-->
-  <link rel="stylesheet" href="css/main.css">
-  <!--<script src="js/vendor/modernizr-2.8.3.min.js"></script>-->
-</head>
-<body lang="en">
-<!--[if lt IE 8]>
-<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-<![endif]-->
+      <a href="#" class="dib link pa3 pb4 ma4 ma0-l bg-white shadow-hover">
+        <h2 class="f6 pb2 bb bw2 b--light-yellow">Latest Prayer Request <span class="fr fw4">March 1</span></h2>
+        <h2 class="ttu">Karen Saunders</h2>
+        <div class="bb bw2 b--mid-gray w2"></div>
+        <p class="f6">Thanks to all who have prayed for my Dad, Charles Saunders. Sadly, he passed away this morning. We
+          are sure that he&hellip;</p>
+        <div class="tr"><span class="btn-offset link b ttu bg-light-gray">Read More</span></div>
+      </a>
+      <div>
+        {{ partial "button" (dict "href" "#" "text" "Post a Prayer Request" "class" "w-100 tc" ) }}
+      </div>
+    </div>
+  </section>
+</div>
 
-<!-- Add your site or application content here -->
-<h1>Hugo with Gulp, PostCSS and Webpack</h1>
+<div class="bg-lines">
+  <section class="cf pa4 pa5-l">
+    <div class="fl w-100 w-75-l">
+      <h2 class="f2 f1-ns">Articles</h2>
+      <div class="cf">
 
-<!--<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-<script src="js/plugins.js"></script>
-<script src="js/main.js"></script>-->
+        <div class="fl w-100 w-50-l pb4 pr3-m pr5-l">
+          <a href="#" class="db link">
+            <h2 class="f6 pb2 bb bw2 b--light-yellow">Change the World</h2>
+            <h2>The Tipping Point</h2>
+            <div class="btn-offset link b ttu bg-white">Read More</div>
+          </a>
+        </div>
 
-{{ template "_internal/google_analytics.html" . }}
+        <div class="fl w-100 w-50-l pb4 pr3-m pr5-l">
+          <a href="#" class="db link">
+            <h2 class="f6 pb2 bb bw2 b--light-yellow">Article
+              <time datetime="TODO" class="fr fw4 ttu">February 27, 2017</time>
+            </h2>
+            <h2>I Give Up</h2>
+            <div class="btn-offset link b ttu bg-white">Read More</div>
+          </a>
+        </div>
+      </div>
 
-</body>
-</html>
+      <div class="cf">
+        <div class="fl w-100 w-50-l pb4 pr3-m pr5-l">
+          <a href="#" class="db link">
+            <h2 class="f6 pb2 bb bw2 b--light-yellow">Article
+              <time datetime="TODO" class="fr fw4 ttu">February 14, 2017</time>
+            </h2>
+            <h2>Modern Day Slavery? 121Hope Reports on Human Trafficking Awareness Day</h2>
+            <div class="btn-offset link b ttu bg-white">Read More</div>
+          </a>
+        </div>
+
+        <div class="fl w-100 w-50-l pb4 pr3-m pr5-l">
+          <a href="#" class="db link">
+            <h2 class="f6 pb2 bb bw2 b--light-yellow">Article
+              <time datetime="TODO" class="fr fw4 ttu">February 20, 2017</time>
+            </h2>
+            <h2>But&hellip; by Becky Hunter</h2>
+            <div class="btn-offset link b ttu bg-white">Read More</div>
+          </a>
+        </div>
+      </div>
+
+      <!--<ul class="list">
+        {{ range $name, $taxonomy := .Site.Taxonomies.eventtypes }}
+        <li><a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a></li>
+        {{ end }}
+      </ul>
+
+      <div>
+        <ul class="list">
+          {{ range $key, $taxonomy := .Site.Taxonomies.eventtypes }}
+          <li> {{ $key }}</li>
+          <ul>
+            {{ range $taxonomy.Pages }}
+            <li hugo-nav="{{ .RelPermalink}}"><a href="{{ .Permalink }}"> {{ .LinkTitle }} </a></li>
+            {{ end }}
+          </ul>
+          {{ end }}
+        </ul>
+      </div>-->
+    </div>
+  </section>
+</div>
+
+<div class="cover bg-center" style="background-image: url('/images/uploads/beckysblog_02-28-17_1920x1080.jpg')">
+  <section class="cf">
+    <a href="#" class="hero link dt w-100 pa4 pa6-l">
+      <article role="article" class="dtc white hover-white v-mid">
+        <time datetime="TODO" class="f4">February 27, 2017</time>
+        <h2 class="f2 f1-ns mt2">I Give Up</h2>
+        <p class="measure-narrow">Ever since I was 12 years old, during the six weeks preceding Easter Sunday, I give up
+          something that I love. Over the years, television&hellip;</p>
+        <p class="f3">Read More <i class="icon-right"></i></p>
+      </article>
+    </a>
+  </section>
+</div>
+<div class="bg-lines">
+  <section class="cf pv4 pv5-l">
+    <h2 class="f2 f1-ns mh4 mh5-l">Events</h2>
+    <div class="ph4 ph5-l bg-near-white">
+
+      <div class="cf w-100 bg-white">
+        <div class="bb bw2 b--gold"></div>
+
+        <a href="#" class="db link">
+          <article role="article">
+            <div class="fl w-70 h6 ph3 pv3 pa4-l">
+              <time class="f6 ttu">Mar 08</time>
+              <h2 class="f4 f2-l mt2 mt3-ns">Faith and Finances</h2>
+              <div class="bb bw2 b--mid-gray w2"></div>
+              <p class="f6 f5-ns">Join our 10-week Faith and Finances class and get equipped with a Biblical vision of
+                money
+                management. There are 2 ways to get involved with Faith and Finances. First, you can join as a
+                participant
+                seeking personal financial knowledge. Second, you can join as a Financial Ally taking the class
+                alongside&hellip;</p>
+            </div>
+            <div role="presentation" class="fl w-30 h6 cover bg-center relative"
+                 style="background-image: url('/images/uploads/faith-finances-image.jpg')">
+              <div role="heading" class="dib ph4 pv2 white bg-gold ttu absolute top-1 right--1">Event</div>
+            </div>
+          </article>
+        </a>
+      </div>
+
+      <div class="cf w-100">
+        <a href="#" class="db link">
+          <article role="article">
+            <div role="presentation" class="fl w-30 h6 cover bg-center relative"
+                 style="background-image: url('/images/uploads/no-app-image.jpg')">
+              <div role="heading" class="dib ph4 pv2 bg-light-gray ttu absolute top-1 left--2">Event</div>
+            </div>
+            <div class="fl h6 w-70 ph3 pv3 pa4-l white bg-mid-gray">
+              <time class="f6 ttu">Mar 11</time>
+              <h2 class="f4 f2-l mt2 mt3-ns">No App For That</h2>
+              <div class="bb bw2 b--white w2"></div>
+              <p class="f6 f5-ns">Parenting wired kids can be difficult, especially if you didn't grow up with the same
+                technologies. Know the latest apps that your kids are using? Know the latest apps that traffickers are
+                abusing? Come to this informative training and learn how to set safe boundaries for your family. Let's
+                talk
+                to our&hellip;</p>
+            </div>
+          </article>
+        </a>
+      </div>
+
+      <div class="cf w-100 bg-white bb bw2">
+        <a href="#" class="db link">
+          <article role="article">
+            <div class="fl w-70 h6 ph3 pv3 pa4-l light-yellow">
+              <time class="f6 ttu">Mar 12</time>
+              <h2 class="f4 f2-l mt2 mt3-ns">Adult Baptism</h2>
+              <div class="bb bw2 b--light-yellow w2"></div>
+              <p class="f6 f5-ns">Join our 10-week Faith and Finances class and get equipped with a Biblical vision of
+                money
+                management. There are 2 ways to get involved with Faith and Finances. First, you can join as a
+                participant
+                seeking personal financial knowledge. Second, you can join as a Financial Ally taking the class
+                alongside&hellip;</p>
+            </div>
+            <div role="presentation" class="fl w-30 h6 cover bg-center relative"
+                 style="background-image: url('/images/uploads/adult-baptism-image.jpg')">
+              <div role="heading" class="dib ph4 pv2 light-yellow bg-light-gray ttu absolute top-1 right--1">Event</div>
+            </div>
+          </article>
+        </a>
+      </div>
+
+    </div>
+    <div class="cf tc mt3"><a href="#" class="btn-offset link f6 b ttu bg-white">View More Events</a></div>
+  </section>
+</div>
+
+<div class="cf ph3 ph4-l">
+  <section>
+    <h2 class="f3 f2-ns w-50-l ml3-m ml4-ns">Serving and Volunteer Opportunities</h2>
+    <!-- TODO: Pull these from the content -->
+    <div role="list" class="cf">
+      <div role="listitem" class="fl w-100 w-50-m w-third-l pb4 ph3-m ph4-l">
+        <a href="#" class="link db">
+          <article role="article">
+            <h2 class="f6 pb2 bb bw2 b--light-yellow">Serve
+              <time datetime="TODO" class="fr fw4 ttu">November 13, 2016</time>
+            </h2>
+            <h2>Community Resource Network (CRN)</h2>
+            <p>Northland is partnering with Community Resource Network in an effort to mobilize faith communities in
+              Central Florida to respond to families experiencing homelessness. There are several ways to serve and we
+              need your help! Just a couple of hours of your time can make a big impact on families facing homelessness
+              right here in our community. Whether you want to work directly with families or prefer to support from
+              behind the scenes, there&rsquo;s a place for you! Interested or want to learn more? Sign up!</p>
+            <div class="btn-offset link b ttu bg-white">Volunteer</div>
+          </article>
+        </a>
+      </div>
+
+      <div role="listitem" class="fl w-100 w-50-m w-third-l pb4 ph3-m ph4-l">
+        <a href="#" class="link db">
+          <article role="article">
+            <h2 class="f6 pb2 bb bw2 b--light-yellow">Serve
+              <time datetime="TODO" class="fr fw4 ttu">April 25, 2016</time>
+            </h2>
+            <h2>Volunteer, Children&rsquo;s Ministries</h2>
+            <p>If you have a heart for children, we want to partner with you in teaching the next generation about God!
+              You
+              can help build a solid foundation based on God&rsquo;s Word in the lives of our children. We need
+              teachers,
+              classroom helpers, greeters, check-in assistants, worship team singers, puppeteers and storytellers. You
+              don't need any previous experience &ndash; all training and materials will be provided!</p>
+            <div class="btn-offset link b ttu bg-white">Volunteer</div>
+          </article>
+        </a>
+      </div>
+
+      <div role="listitem" class="fl w-100 w-50-m w-third-l pb4 ph3-m ph4-l">
+        <a href="#" class="link db">
+          <article role="article">
+            <h2 class="f6 pb2 bb bw2 b--light-yellow">Serve
+              <time datetime="TODO" class="fr fw4 ttu">August 26, 2015</time>
+            </h2>
+            <h2>Bookstore Resource Associate</h2>
+            <p>Join our team in equipping those who desire to learn and grow in Christ by volunteering in the Bookstore.
+              We need team members some weekdays and Saturday nights to assist customers, shelve books, do inventory and
+              help with everyday duties and bookkeeping.</p>
+            <div class="btn-offset link b ttu bg-white">Volunteer</div>
+          </article>
+        </a>
+      </div>
+
+    </div>
+    <div class="cf tc mt4"><a href="#" class="btn-offset link f6 b ttu bg-white">View More Opportunities</a></div>
+  </section>
+</div>
+
+{{ end }}

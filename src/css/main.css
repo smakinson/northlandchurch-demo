@@ -1,0 +1,272 @@
+@import "imports/reset.css";
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* vars, etc. */
+:root {
+  --white: #ffffff;
+  --light-gray: #eeeeee;
+  --mid-gray: #555555;
+  --light-yellow: #DBD2C3;
+  --green: #7CC475;
+}
+
+/* end vars */
+
+html * {
+  background-repeat: no-repeat;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+a, a:hover, a:active, a:focus {
+  color: var(--mid-gray);
+}
+
+a:hover, a:active, a:focus {
+  outline: 0 !important;
+}
+
+/** Change the color on input placeholder text */
+/* https://css-tricks.com/almanac/selectors/p/placeholder/ */
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: var(--mid-gray);
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+  color: var(--mid-gray);
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+  color: var(--mid-gray);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: var(--mid-gray);
+  opacity: 1;
+}
+
+/* Prevent hovers on the menus */
+.hide-child .child {
+  pointer-events: none;
+}
+
+.hide-child:hover .child,
+.hide-child:focus .child,
+.hide-child:active .child {
+  pointer-events: auto;
+}
+
+/* The buttons with the offset bg. Specific colors using the tachyons colors. */
+.btn-offset {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  background-color: transparent;
+
+  &:after {
+    transition: padding .2s ease-out;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    bottom: -6px;
+    right: -10px;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &:hover:after {
+    padding: 8px 10px 5px 10px;
+    background-color: var(--green) !important;
+  }
+
+  /* TODO: Get these colors from the tachyons vars */
+  &.bg-white:after {
+    background-color: var(--white);
+  }
+
+  &.bg-light-gray:after {
+    background-color: var(--light-gray);
+  }
+
+
+}
+
+/* ==========================================================================
+   Responsive styles
+   ========================================================================== */
+
+/* tachyons additions and overrides */
+/* TODO: gt tachyons source and make these changes there */
+
+.h6 {
+  height: 22rem;
+}
+
+.light-yellow {
+  color: var(--light-yellow);
+}
+
+.bg-light-yellow {
+  background-color: var(--light-yellow);
+}
+
+.b--light-yellow {
+  border-color: var(--light-yellow);
+}
+
+.hover-light-yellow:focus, .hover-light-yellow:hover {
+  color: var(--light-yellow)
+}
+
+.hover-bg-light-yellow:focus, .hover-bg-light-yellow:hover {
+  background-color: var(--light-yellow)
+}
+
+.green {
+  color: var(--green);
+}
+
+.bg-green {
+  background-color: var(--green);
+}
+
+.b--green {
+  border-color: var(--green);
+}
+
+.hover-green:focus, .hover-green:hover {
+  color: var(--green)
+}
+
+.hover-bg-green:focus, .hover-bg-green:hover {
+  background-color: var(--green)
+}
+
+/* end tachyons changes */
+
+#search-bar {
+
+  transition: width .3s;
+
+  /* https://css-tricks.com/almanac/selectors/p/placeholder/ */
+  & ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: black;
+  }
+
+  & ::-moz-placeholder { /* Firefox 19+ */
+    color: black;
+  }
+
+  & :-ms-input-placeholder { /* IE 10+ */
+    color: black;
+  }
+
+  & :-moz-placeholder { /* Firefox 18- */
+    color: black;
+    opacity: 1;
+  }
+
+  & .btn {
+    line-height: 2em;
+  }
+
+  &.closed {
+    width: 4.1em;
+
+    & .noshow {
+      display: none;
+    }
+  }
+}
+
+.hero {
+  position: relative;
+  height: 400px;
+
+  & :first-child {
+    position: relative;
+    z-index: 10;
+  }
+
+  &:before {
+    transition: background .3s;
+    content: "";
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 0;
+  }
+
+  &:hover:before {
+    background: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.bg-lines {
+  position: relative;
+  z-index: 1;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    bottom: 99px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background: url("../images/bg-lines.png") repeat;
+  }
+}
+
+/* TODO: Use tachyons @media vars */
+
+@media screen and (min-width: 30em) {
+
+  .h6-ns {
+    height: 22rem;
+  }
+
+  .bg-lines {
+    &:before {
+      top: 128px;
+    }
+  }
+}
+
+@media screen and (min-width: 30em) and (max-width: 60em) {
+
+  .hero {
+    height: 600px;
+  }
+
+  .h6-m {
+    height: 22rem;
+  }
+}
+
+@media screen and (min-width: 60em) {
+
+  .hero {
+    height: 700px;
+  }
+
+  .h6-l {
+    height: 22rem;
+  }
+}

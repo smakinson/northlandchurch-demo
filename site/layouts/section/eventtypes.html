@@ -1,0 +1,21 @@
+{{ define "contentPad" }}
+
+<!-- TODO: Event types template or maybe this doesn't need to be a taxonomy? -->
+
+<main role="main">
+  <div class="center">
+    <h1>All Event Types</h1>
+
+    <ul class="list pa0">
+      {{ range (where .Site.Pages "Type" "eventType") }}
+      <li class="pv1">
+        <article>
+          <a href="{{ .RelPermalink }}" class="link">{{ .Title }}</a>
+        </article>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</main>
+
+{{ end }}

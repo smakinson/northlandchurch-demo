@@ -1,0 +1,257 @@
+<!doctype html>
+<html class="no-js h-100" lang="{{ .Site.LanguageCode }}" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <base href="{{ .Site.BaseURL }}">
+  <title>{{ block "title" . }}{{ .Title }}{{ if .Title }} &ndash; {{ end }}{{ .Site.Title }}{{ end }}</title>
+  <link rel="canonical" href="{{ .Permalink }}">
+  <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- TODO: favicon.ico in the root directory -->
+
+  <!--<link rel="stylesheet" href="css/normalize.css">-->
+  <link rel="stylesheet" href="/css/tachyons.min.css">
+  <link rel="stylesheet" href="css/fontello.css">
+  <link rel="stylesheet" href="css/main.css">
+  <!--<script src="js/vendor/modernizr-2.8.3.min.js"></script>-->
+</head>
+<body lang="en" class="sans-serif mid-gray bg-near-white h-100 {{ block " bodyClass" . }}home{{ end }}">
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<header class="bg-white">
+  <!--<nav class="dt w-100 mw9 center">
+    <div class="dtc w4 w5-l v-mid pv2 pl2 pr4 pr2-m">
+      &lt;!&ndash; TODO: svg logo &ndash;&gt;
+      <a href="/" class="dib w-100 pa1 grow border-box">
+        <img src="/images/northland-logo.png" alt="Northland Church">
+      </a>
+    </div>
+    <div class="dtc v-top tl pv3 pv2-m">
+      &lt;!&ndash;<div class="hide-child">&ndash;&gt;
+        <a class="f6 fw7 ttu no-underline black dim dn dib-ns pv2 ph2" href="/">Respond To God</a>
+        &lt;!&ndash;<div class="child bg-blue">
+          <a href="/">give</a>
+        </div>
+      </div>&ndash;&gt;
+      <a class="f6 fw7 ttu no-underline black dim dn dib-ns pv2 ph2" href="/">Resources &amp; Media</a>
+      <a class="f6 fw7 ttu no-underline black dim dn dib-ns pv2 ph2" href="/">Connect @ Northland</a>
+      <a class="f6 fw7 no-underline black-40 hover-black dn dib-l pv2 pl3 pr2" href="/">About</a>
+      <a class="f6 fw7 no-underline black-40 hover-black dn dib-l pv2 ph2" href="/">Give</a>
+      <a class="f6 fw7 no-underline black-40 hover-black dn dib-l pv2 ph2" href="/">Need Help</a>
+    </div>
+  </nav>-->
+  <!-- TODO: Use json data file to render the navigation? -->
+  <nav role="navigation">
+    <div class="top-nav db dt-l w-100 mw9 center border-box pa3 pr0 mt5 mt0-ns">
+      <a class="db dtc-l v-mid link dim w-100 w-20-l tc tl-l mb3 mb0-l" href="/" title="Home">
+        <!-- TODO: svg logo? -->
+        <img role="banner" src="/images/northland-logo.png" alt="Northland Church">
+      </a>
+      <ul class="list dtc-l v-mid w-100 w-80-l tc tr-l pl0 pr0 pr6-l pl4-l">
+        <li class="dib tl hide-child">
+          <a class="link dim dib f6 f5-l b ttu mb3" href="#">Respond To God</a>
+          <div class="pv3 bg-light-yellow child absolute z-9999">
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">give</a>
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">pray</a>
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">read the Bible</a>
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">serve</a>
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">worship</a>
+          </div>
+        </li>
+        <li class="dib tl ml3 hide-child">
+          <a class="link dim dib dark-gray f6 f5-l b ttu mb3" href="#">Resources &amp; Media</a>
+          <div class="pv3 bg-light-yellow child absolute z-9999">
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">articles</a>
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">services</a>
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">series</a>
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">songs</a>
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">newspaper</a>
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">videos</a>
+          </div>
+        </li>
+        <li class="dib tl ml3 hide-child">
+          <a class="link dim dib dark-gray f6 f5-l b ttu mb3" href="#">Connect @ Northland</a>
+          <div class="pv3 bg-light-yellow child absolute z-9999">
+            <a href="/calendar" class="link db ph4 pv2 fs6 hover-bg-white">calendar</a>
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">children</a>
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">classes</a>
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">distributed <span
+              class="nowrap">church &raquo;</span></a>
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">missions <span
+              class="nowrap">trips &raquo;</span></a>
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">events</a>
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">locations &amp; times</a>
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">men</a>
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">ministries</a>
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">pastoral care</a>
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">recovery</a>
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">service projects</a>
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">special needs</a>
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">students</a>
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">volunteer</a>
+            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">women</a>
+          </div>
+        </li>
+        <li class="dib">
+          <a class="link light-yellow f6 fw6 dib ml4-ns mt3 mt2-l" href="#" title="About">About</a>
+          <a class="link light-yellow f6 fw6 dib ml3 mt3" href="#" title="Need Help">Need Help</a>
+          <a class="link light-yellow f6 fw6 dib ml3 mt3 pr3 pr0-ns" href="#" title="Give">Give</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="closed pa0 w-90 w-70-m w-60-l h3 bg-light-blue absolute top-0 right-1 overflow-hidden" id="search-bar">
+    <span role="button" class="btn dib f3 h3 pa1 ph3 hover-bg-light-gray bg-animate icon-search absolute left-0 top-0 pointer"
+          id="search-bar-btn"></span>
+    <span class="noshow">
+      <input role="search" placeholder="Search&hellip;"
+             class="di pa3 mt1 black-70 f4 w-60 b--none bg-transparent outline-0 absolute top-0" style="left: 2.8em;" aria-label="Text to search the Northland website">
+      <span role="button" class="btn pa3 f5 h3 ttu hover-bg-light-gray bg-animate absolute right-0 pointer"
+            id="search-bar-close-btn">Close</span>
+    </span>
+  </div>
+</header>
+
+<div class="cf mw9 center">
+  {{ block "contentFull" . }} <!-- Use this block for full width content -->
+  <div class="pv3 ph3 ph4-l">
+    {{ block "contentPad" . }}<!-- Use this block for padded content -->{{ end }}
+  </div>
+  {{ end }}
+</div>
+
+<footer role="contentinfo" class="cf w-100 mw9 pv6 center">
+  <div class="mw9 center">
+    <div class="cf ph3 ph5-ns bg-light-gray">
+      <div class="fl w-100 w-40-l pa3">
+        <div class="pv4-ns pb0-m">
+          <h4 class="f3 mt0-ns">Sign up for Our Newsletter</h4>
+          <p class="measure-narrow">Find out about what's going on in the Northland community in our weekly email.</p>
+        </div>
+      </div>
+      <div class="fl w-100 w-60-l pa3">
+        <div class="pb3 pv4-ns pt0-m relative">
+          <input type="text" class="pa3 w-90 b--none" placeholder="Enter your email here&hellip;" aria-label="Email address to receive the Northland subscription email">
+          <div class="mt2 absolute-l bottom-0 right-2">
+            {{ partial "button" (dict "href" "#" "text" "Subscribe" ) }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cf ph3 ph4-m ph5-l pb4 bg-light-yellow">
+      <div class="fl w-100 w-25-l ph3 tc tl-l">
+        <h5 class="f3 tracked-mega tracked-l f5-l mb0 white">Locations</h5>
+      </div>
+      <div class="fl w-100 w-third-m w-25-l ph3 tc tl-ns">
+        <!-- TODO: microformats -->
+        <h5 class="f5 mb0">Longwood</h5>
+        <p class="f6 mb1"><a href="tel:4079494000" class="link">(407) <span class="nowrap">949-4000</span></a></p>
+        <a href="#" class="link dim f6">get <span class="nowrap">directions &raquo;</span></a>
+      </div>
+      <div class="fl w-50 w-third-m w-25-l ph3 tc tl-l">
+        <!-- TODO: microformats -->
+        <h5 class="f5 mb0">Lake County</h5>
+        <p class="f6 mb1"><a href="tel:4079497184" class="link">(407) <span class="nowrap">949-7184</span></a></p>
+        <a href="#" class="link dim f6">get <span class="nowrap">directions &raquo;</span></a>
+      </div>
+      <div class="fl w-50 w-third-m w-25-l ph3 tc tr-m tl-l">
+        <!-- TODO: microformats -->
+        <h5 class="f5 mb0">Oviedo</h5>
+        <p class="f6 mb1"><a href="tel:4079371862" class="link">(407) <span class="nowrap">937-1862</span></a></p>
+        <a href="#" class="link dim f6">get <span class="nowrap">directions &raquo;</span></a>
+      </div>
+    </div>
+    <!-- TODO: Use json data file to render the navigation that matches the top nav -->
+    <nav role="navigation">
+      <div class="cf ph3 ph4-m ph5-l pt4">
+        <div class="fl w-40 w-third-m w-50-l ph3">
+          <!--<div class="fl w-40 w-third-m w-25-l pa3 tl tc-m">-->
+          <div class="fl w-100 w-50-l">
+            <ul class="list pl0 mt0 mb5">
+              <li class="mb3"><a href="#" class="link dim" title="About">About</a></li>
+              <li class="mb3"><a href="#" class="link dim" title="Give">Give</a></li>
+              <li class="mb3"><a href="#" class="link dim" title="Need Help">Need Help</a></li>
+              <li class="mb3"><a href="#" class="link dim" title="New to God">New to <span class="nowrap">God &raquo;</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="fl w-100 w-50-l ph3-l">
+            <!--<div class="fl w-60 w-third-m w-25-l pa3 tr tc-m tl-l">-->
+            <h5 class="dib f5 fw4 mt0 mb0 pb3 bb bw2 b--gray">Respond to God</h5>
+            <ul class="list pl0">
+              <li class="mb2"><a href="#" class="link dim f6">give</a></li>
+              <li class="mb2"><a href="#" class="link dim f6">pray</a></li>
+              <li class="mb2"><a href="#" class="link dim f6">read the Bible</a></li>
+              <li class="mb2"><a href="#" class="link dim f6">serve</a></li>
+              <li class="mb2"><a href="#" class="link dim f6">worship</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="fr fl-ns w-60 w-third-m w-25-l ph3 tr tc-m tl-l">
+          <h5 class="dib f5 fw4 mt0 mb0 pb3 bb bw2 b--gray">Resources &amp; Media</h5>
+          <ul class="list pl0">
+            <li class="mb2"><a href="#" class="link dim f6">articles</a></li>
+            <li class="mb2"><a href="#" class="link dim f6">services</a></li>
+            <li class="mb2"><a href="#" class="link dim f6">series</a></li>
+            <li class="mb2"><a href="#" class="link dim f6">songs</a></li>
+            <li class="mb2"><a href="#" class="link dim f6">newspaper</a></li>
+            <li class="mb2"><a href="#" class="link dim f6">videos</a></li>
+          </ul>
+          <h5 class="dib f5 fw4 mb0 pb3 bb bw2 b--gray">CHANNELS</h5>
+          <ul class="list pl0">
+            <li class="mb2"><a href="#" class="link dim f6">Ask a Pastor</a></li>
+            <li class="mb2"><a href="#" class="link dim f6">Becky&rsquo;s Blog</a></li>
+            <li class="mb2"><a href="#" class="link dim f6">Chasing Wisdom</a></li>
+          </ul>
+        </div>
+        <div class="fr fl-l w-60 w-third-m w-25-l ph3 tr tl-l">
+          <h5 class="dib f5 fw4 mt0 mb0 pb3 bb bw2 b--gray">Connect @ Northland</h5>
+          <ul class="list pl0">
+            <li class="mb2"><a href="#" class="link dim f6">calendar</a></li>
+            <li class="mb2"><a href="#" class="link dim f6">children</a></li>
+            <li class="mb2"><a href="#" class="link dim f6">classes</a></li>
+            <li class="mb2"><a href="#" class="link dim f6">distributed <span class="nowrap">church &raquo;</span></a>
+            </li>
+            <li class="mb2"><a href="#" class="link dim f6">missions <span class="nowrap">trips &raquo;</span></a>
+            </li>
+            <li class="mb2"><a href="#" class="link dim f6">events</a></li>
+            <li class="mb2"><a href="#" class="link dim f6">locations &amp; times</a></li>
+            <li class="mb2"><a href="#" class="link dim f6">men</a></li>
+            <li class="mb2"><a href="#" class="link dim f6">ministries</a></li>
+            <li class="mb2"><a href="#" class="link dim f6">pastoral care</a></li>
+            <li class="mb2"><a href="#" class="link dim f6">recovery</a></li>
+            <li class="mb2"><a href="#" class="link dim f6">service projects</a></li>
+            <li class="mb2"><a href="#" class="link dim f6">special needs</a></li>
+            <li class="mb2"><a href="#" class="link dim f6">students</a></li>
+            <li class="mb2"><a href="#" class="link dim f6">volunteer</a></li>
+            <li class="mb2"><a href="#" class="link dim f6">women</a></li>
+          </ul>
+          <a class="db link dim w-100 mt5" href="/" title="Home">
+            <img src="/images/northland-logo.png" alt="Northland Church">
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+<!--<script src="js/plugins.js"></script>-->
+<script src="app.js"></script>
+
+{{ block "extraScripts" . }}<!-- Use this block to add script to the footer -->{{ end }}
+
+{{ template "_internal/google_analytics.html" . }}
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+<!--
+Usage:
+  partial "button" (dict "href" "link" "text" "Click Me" "class" "extra classes" )
+-->
+<a role="button" href="{{ .href }}" class="no-underline dib pv3 ph4 bg-green white hover-mid-gray hover-bg-near-white bg-animate ba b--green ttu pointer {{ .class }}">{{ .text | safeHTML }}</a>

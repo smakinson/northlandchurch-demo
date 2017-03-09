@@ -5,8 +5,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-
+  <!-- TODO: Meta tags, etc  -->
   <base href="{{ .Site.BaseURL }}">
   <title>{{ block "title" . }}{{ .Title }}{{ if .Title }} &ndash; {{ end }}{{ .Site.Title }}{{ end }}</title>
   <link rel="canonical" href="{{ .Permalink }}">
@@ -28,28 +27,7 @@
 <![endif]-->
 
 <header class="bg-white">
-  <!--<nav class="dt w-100 mw9 center">
-    <div class="dtc w4 w5-l v-mid pv2 pl2 pr4 pr2-m">
-      &lt;!&ndash; TODO: svg logo &ndash;&gt;
-      <a href="/" class="dib w-100 pa1 grow border-box">
-        <img src="/images/northland-logo.png" alt="Northland Church">
-      </a>
-    </div>
-    <div class="dtc v-top tl pv3 pv2-m">
-      &lt;!&ndash;<div class="hide-child">&ndash;&gt;
-        <a class="f6 fw7 ttu no-underline black dim dn dib-ns pv2 ph2" href="/">Respond To God</a>
-        &lt;!&ndash;<div class="child bg-blue">
-          <a href="/">give</a>
-        </div>
-      </div>&ndash;&gt;
-      <a class="f6 fw7 ttu no-underline black dim dn dib-ns pv2 ph2" href="/">Resources &amp; Media</a>
-      <a class="f6 fw7 ttu no-underline black dim dn dib-ns pv2 ph2" href="/">Connect @ Northland</a>
-      <a class="f6 fw7 no-underline black-40 hover-black dn dib-l pv2 pl3 pr2" href="/">About</a>
-      <a class="f6 fw7 no-underline black-40 hover-black dn dib-l pv2 ph2" href="/">Give</a>
-      <a class="f6 fw7 no-underline black-40 hover-black dn dib-l pv2 ph2" href="/">Need Help</a>
-    </div>
-  </nav>-->
-  <!-- TODO: Use json data file to render the navigation? -->
+  <!-- TODO: Use json data file to render the navigation? Or config file? -->
   <nav role="navigation">
     <div class="top-nav db dt-l w-100 mw9 center border-box pa3 pr0 mt5 mt0-ns">
       <a class="db dtc-l v-mid link dim w-100 w-20-l tc tl-l mb3 mb0-l" href="/" title="Home">

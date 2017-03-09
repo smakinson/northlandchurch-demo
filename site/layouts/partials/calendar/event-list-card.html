@@ -17,8 +17,9 @@
       </div>
       <!-- TODO: Look at partials for these images here and elsewhere -->
       {{ if ne .Params.mainimage nil }}
-      <div role="presentation" class="cf h5 cover bg-center"
-           style="background-image: url('{{ .Params.mainimage }}')" aria-hidden="true"></div>
+      <div class="cf">
+      <img role="presentation" src="{{ .Params.mainimage }}" alt="" aria-hidden="true">
+      </div>
       {{ end }}
       <h2 class="mb0">{{ .Title }}</h2>
       <p class="mt0 f6">

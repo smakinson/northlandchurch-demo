@@ -7,6 +7,8 @@
     "hugo": "gulp hugo",
     "build": "gulp build",
     "build-preview": "gulp build-preview",
+    "build-netlify": "gulp build-netlify",
+    "build-netlify-preview": "gulp build-netlify-preview",
     "start": "gulp server",
     "lint": "eslint src"
   },

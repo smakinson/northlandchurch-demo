@@ -1,4 +1,4 @@
-// JS Goes here - ES6 supported
+;(function ($) {
 
 $('#search-bar-btn').click(() => {
   $('#search-bar').removeClass('closed');
@@ -10,3 +10,4 @@ $('#search-bar-close-btn').click(() => {
   return false;
 });
 
+}($));

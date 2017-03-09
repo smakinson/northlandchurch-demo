@@ -19,11 +19,11 @@
 
   <!--<link rel="stylesheet" href="css/normalize.css">-->
   <link rel="stylesheet" href="/css/tachyons.min.css">
-  <link rel="stylesheet" href="css/fontello.css">
-  <link rel="stylesheet" href="css/main.css">
-  <!--<script src="js/vendor/modernizr-2.8.3.min.js"></script>-->
+  <link rel="stylesheet" href="/css/fontello.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body lang="en" class="sans-serif mid-gray bg-near-white h-100 {{ block " bodyClass" . }}home{{ end }}">
+<body class="sans-serif mid-gray bg-near-white h-100 {{ block " bodyClass" . }}home{{ end }}">
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
   your browser</a> to improve your experience.</p>
@@ -94,7 +94,7 @@
     <span role="button" class="btn dib f3 h3 pa1 ph3 hover-bg-light-gray bg-animate icon-search absolute left-0 top-0 pointer"
           id="search-bar-btn"></span>
     <span class="noshow">
-      <input role="search" type="text" placeholder="Search&hellip;"
+      <input type="text" placeholder="Search&hellip;"
              class="di pa3 mt1 black-70 f4 w-60 b--none bg-transparent outline-0 absolute top-0" style="left: 2.8em;" aria-label="Text to search the Northland website">
       <span role="button" class="btn pa3 f5 h3 ttu hover-bg-light-gray bg-animate absolute right-0 pointer"
             id="search-bar-close-btn">Close</span>
@@ -228,13 +228,14 @@
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
 <!--<script src="js/plugins.js"></script>-->
-<script src="app.js"></script>
 
 {{ block "extraScripts" . }}<!-- Use this block to add script to the footer -->{{ end }}
 
 <!--[if lte IE 8]>
 <script src="/js/vendor/respond.min.js"></script>
 <![endif]-->
+
+<script src="/app.js"></script>
 
 {{ template "_internal/google_analytics.html" . }}
 

@@ -30,7 +30,7 @@ p {
   line-height: 1.5em;
 }
 
-a, a:link, a:hover, a:active, a:focus {
+a, a:link, a:hover, a:active, a:focus, a:visited {
   color: var(--mid-gray);
 }
 
@@ -60,12 +60,14 @@ a:hover, a:active, a:focus {
 /* Prevent hovers on the menus */
 .hide-child .child {
   pointer-events: none;
+  visibility: hidden;/* IE */
 }
 
 .hide-child:hover .child,
 .hide-child:focus .child,
 .hide-child:active .child {
   pointer-events: auto;
+  visibility: visible;/* IE */
 }
 
 /* The buttons with the offset bg. Specific colors using the tachyons colors. */
@@ -204,7 +206,7 @@ a:hover, a:active, a:focus {
     transition: background .3s;
     content: "";
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     height: 100%;
     width: 100%;

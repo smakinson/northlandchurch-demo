@@ -9,7 +9,7 @@ import webpack from "webpack";
 import webpackConfig from "./webpack.conf";
 
 const browserSync = BrowserSync.create();
-const netlifyHugoBin = "hugo_0.18";
+const netlifyHugoBin = "hugo_0.19";
 const defaultArgs = ["-d", "../dist", "-s", "site", "-v"];
 
 var hugoBin = "hugo";
@@ -49,7 +49,6 @@ gulp.task("js", (cb) => {
 });
 
 gulp.task("server", ["hugo", "css", "js"], () => {
-
   browserSync.init({
     server: {
       baseDir: "./dist"
@@ -60,10 +59,9 @@ gulp.task("server", ["hugo", "css", "js"], () => {
   gulp.watch("./site/**/**/*", ["hugo"]);
 });
 
-function buildSite(cb, options, bin) {
+function buildSite(cb, options) {
   const args = options ? defaultArgs.concat(options) : defaultArgs;
-  //const hugoBin = bin || "hugo";
-
+  
   return cp.spawn(hugoBin, args, {stdio: "inherit"}).on("close", (code) => {
     if (code === 0) {
       browserSync.reload();

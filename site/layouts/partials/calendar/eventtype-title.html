@@ -1,0 +1,12 @@
+<!--
+Look up the title of the eventType for display.
+ Currently grabs the first one in the list.
+ Usage:
+  partial "calendar/eventtype-title" .
+-->
+
+{{ $eventType := index .Params.eventtypes 0 }}
+
+{{ range $index, $element := first 1 (where .Site.Pages "Params.eventtype" $eventType) }}
+{{ .Title }}
+{{ end }}

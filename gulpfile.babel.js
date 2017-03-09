@@ -61,7 +61,7 @@ gulp.task("server", ["hugo", "css", "js"], () => {
 
 function buildSite(cb, options) {
   const args = options ? defaultArgs.concat(options) : defaultArgs;
-  
+
   return cp.spawn(hugoBin, args, {stdio: "inherit"}).on("close", (code) => {
     if (code === 0) {
       browserSync.reload();

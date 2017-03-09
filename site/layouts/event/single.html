@@ -7,7 +7,8 @@
 
       <div class="cf bg-white relative">
         <div class="fl w-100 w-60-l pr3-l">
-          <img role="presentation" src="{{ .Params.mainimage }}" alt="" aria-hidden="true">
+          <div role="presentation" class="cf h6 cover bg-center"
+               style="background-image: url('{{ .Params.mainimage }}')" aria-hidden="true"></div>
         </div>
         <div class="fl w-100 w-40-l pt3 pb4 ph3 pl3-ns">
           <h3 class="f5 ttu">Date &amp; Time</h3>
@@ -60,7 +61,7 @@
           <h3 class="f2">Details</h3>
 
           <h4 class="ttu">Event Type</h4>
-          <p>{{ .Params.eventtypes }}</p>
+          <p>{{ partial "calendar/eventtype-title" . }}</p>
           {{ if ne .Params.audience nil }}
           <h4 class="ttu">Audience</h4>
           <p>{{ .Params.audience }}</p>

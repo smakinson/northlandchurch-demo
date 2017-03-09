@@ -4,36 +4,33 @@
      class="link db pa3 pb4 bg-white shadow-hover relative">
     <article role="article">
       <div class="bb bw2 b--light-yellow"></div>
-      <p class="fl f6 black">
-        <!-- Look up the title of the eventType for display -->
-        {{ $eventType := index .Params.eventtypes 0 }}
-
-        {{ range $index, $element := first 1 (where .Site.Pages "Params.eventtype" $eventType) }}
-        {{ .Title }}
-        {{ end }}
-      </p>
-      <!-- TODO: microformats and time tag -->
-      <p class="fr f6 ttu">
-        {{ if ne .Params.startdate nil }}
-        {{ dateFormat "Jan 2" .Params.startdate }}
-        {{ end }}
-      </p>
+      <div class="cf">
+        <p class="fl f6 black">
+          {{ partial "calendar/eventtype-title" . }}
+        </p>
+        <!-- TODO: microformats and time tag -->
+        <p class="fr f6 ttu">
+          {{ if ne .Params.startdate nil }}
+          {{ dateFormat "Jan 2" .Params.startdate }}
+          {{ end }}
+        </p>
+      </div>
       <!-- TODO: Look at partials for these images here and elsewhere -->
       {{ if ne .Params.mainimage nil }}
-      <img role="presentation" src="{{ .Params.mainimage }}" alt="" class="w-100" style="max-height: 10em"
-           aria-hidden="true">
+      <div role="presentation" class="cf h5 cover bg-center"
+           style="background-image: url('{{ .Params.mainimage }}')" aria-hidden="true"></div>
       {{ end }}
       <h2 class="mb0">{{ .Title }}</h2>
       <p class="mt0 f6">
         {{ if ne .Params.startdate nil }}
         <span class="ttl">
-                  <!-- starts -->
-                  {{ dateFormat "3:04PM" .Params.startdate }}
+          <!-- starts -->
+          {{ dateFormat "3:04PM" .Params.startdate }}
           <!-- ends -->
-                  {{ if ne .Params.enddate nil }}
+          {{ if ne .Params.enddate nil }}
           &ndash; {{ dateFormat "3:04PM" .Params.enddate }}
-                  {{ end }}
-                </span>
+          {{ end }}
+        </span>
         {{ end }}
       </p>
       <p class="f6">{{ .Summary }}</p>

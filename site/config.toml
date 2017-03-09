@@ -3,6 +3,7 @@
 baseurl = "/"
 languageCode = "en-us"
 title = "Northland Church Demo"
+copyright = "" #RSS
 
 # Do not inject generator meta tag on homepage.
 disableHugoGeneratorInject = true
@@ -13,6 +14,10 @@ eventtype = "eventtypes"
 
 [permalinks]
 events = "calendar/:section/:year/:month/:day/:title"
+
+[author]
+name= ""  #RSS
+email = "" #RSS
 
 
 # Define to add Google Analytics to the page. ( UA-XXXXX-X )

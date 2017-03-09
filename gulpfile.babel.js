@@ -9,14 +9,23 @@ import webpack from "webpack";
 import webpackConfig from "./webpack.conf";
 
 const browserSync = BrowserSync.create();
-const hugoBin = "hugo";
+const netlifyHugoBin = "hugo_0.18";
 const defaultArgs = ["-d", "../dist", "-s", "site", "-v"];
+
+var hugoBin = "hugo";
 
 gulp.task("hugo", (cb) => buildSite(cb));
 gulp.task("hugo-preview", (cb) => buildSite(cb, ["--buildDrafts", "--buildFuture"]));
 
 gulp.task("build", ["css", "js", "hugo"]);
 gulp.task("build-preview", ["css", "js", "hugo-preview"]);
+
+gulp.task("build-netlify", ["css", "js", "setNetlifyHugo", "hugo"]);
+gulp.task("build-netlify-preview", ["css", "js", "setNetlifyHugo", "hugo-preview"]);
+
+gulp.task("setNetlifyHugo", (cb) => {
+  hugoBin = netlifyHugoBin;
+});
 
 gulp.task("css", () => (
   gulp.src("./src/css/*.css")
@@ -40,6 +49,7 @@ gulp.task("js", (cb) => {
 });
 
 gulp.task("server", ["hugo", "css", "js"], () => {
+
   browserSync.init({
     server: {
       baseDir: "./dist"
@@ -50,8 +60,9 @@ gulp.task("server", ["hugo", "css", "js"], () => {
   gulp.watch("./site/**/**/*", ["hugo"]);
 });
 
-function buildSite(cb, options) {
+function buildSite(cb, options, bin) {
   const args = options ? defaultArgs.concat(options) : defaultArgs;
+  //const hugoBin = bin || "hugo";
 
   return cp.spawn(hugoBin, args, {stdio: "inherit"}).on("close", (code) => {
     if (code === 0) {

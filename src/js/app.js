@@ -45,9 +45,13 @@
   });
 
   $('#top-nav .top-nav-menu a').click(function(e) {
-    // Make sure the menu is fully visible before allowing links to work
-    if ($(this).parent().css('opacity') < 1){
-      return false;
+    // Make sure the menu is fully visible before allowing links to work,
+    // but make sure opacity is supported first.
+    if($('html').hasClass('opacity')) {
+      if ($(this).parent().css('opacity') < 1) {
+        alert('dsdsf');
+        return false;
+      }
     }
   });
 

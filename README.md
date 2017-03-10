@@ -1,12 +1,5 @@
 # Northland Church Demo
 
-**A [Hugo](https://gohugo.io/) boilerplate for creating truly epic websites**
-
-This is a boilerplate for using Hugo as a static site generator and Gulp + Webpack as your
-asset pipeline.
-
-It's setup to use post-css and babel for CSS and JavaScript.
-
 ## Usage
 
 Be sure that you have the latest node, npm and [Hugo](https://gohugo.io/) installed. If you need to install hugo on OSX, run:
@@ -73,17 +66,4 @@ You can use ES6 and use both relative imports or import libraries from npm.
 Any CSS file directly under the `src/css/` folder will get compiled with [PostCSS Next](http://cssnext.io/)
 to `/dist/css/{filename}.css`. Import statements will be resolved as part of the build
 
-## Deploying to netlify
 
-- Push your clone to your own GitHub repository.
-- [Create a new site on Netlify](https://app.netlify.com/start) and link the repository.
-
-Now netlify will build and deploy your site whenever you push to git.
-
-You can also click this button:
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/eliwilliamson/victor-hugo)
-
-
-
-## Enjoy!!

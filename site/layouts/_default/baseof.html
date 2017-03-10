@@ -31,28 +31,31 @@
 
 <header class="bg-white">
   <!-- TODO: Use json data file to render the navigation? Or config file? -->
-  <nav role="navigation">
-    <div class="db dt-l w-100 mw9 center pa3">
-      <a class="db dtc-l v-mid link dim w-100 w-80-m w-20-l tc tl-l pl3-m mb3 mb0-l" href="/" title="Home">
+  <nav role="navigation" id="top-nav">
+    <div class="cf w-100 mw9 center pa3 tc">
+      <a class="dib db-ns fl-l link dim w-80-m w-20-l tl-l pl2 pr0-m ph2-l mb3 mb0-l" href="/" title="Home">
         <!-- TODO: svg logo? -->
-        <img role="banner" class="dn dib-ns" src="/images/northland-logo.png" alt="Northland Church" aria-hidden="true">
-        <img role="banner" class="dib dn-ns" src="/images/northland-logo-sub.png" alt="Northland Church" aria-hidden="true">
+        <img role="banner" class="dn db-ns mw-100" src="/images/northland-logo.png" alt="Northland Church" aria-hidden="true">
+        <img role="banner" class="db dn-ns mw-100" src="/images/northland-logo-sub.png" alt="Northland Church" aria-hidden="true">
       </a>
+      <!--<ul class="ba list dtc-l v-mid w-100 w-80-l tc tr-l ph0 ph3-l ph4-l">-->
       <ul class="list dtc-l v-mid w-100 w-80-l tc tr-l ph0 ph3-l ph4-l">
-        <li class="dib tl hide-child ph1 ph2-ns">
+        <li class="top-nav-menu-trigger dib tl ph1 ph2-l">
           <a class="link dim dib f6 f5-l b ttu mb3" href="#">Respond To God</a>
-          <div class="pv3 bg-light-yellow child absolute z-9999">
-            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">give</a>
+          <div class="top-nav-menu pv3 bg-light-yellow absolute z-9999">
+            <span role="button" class="top-nav-menu-close-btn fr mr4 dn-ns">Close</span>
+            <a href="/sdfs" class="link db ph4 pv2 mt4 mt0-ns fs6 hover-bg-white">give</a>
             <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">pray</a>
             <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">read the Bible</a>
-            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">serve</a>
+            <a href="/serve" class="link db ph4 pv2 fs6 hover-bg-white">serve</a>
             <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">worship</a>
           </div>
         </li>
-        <li class="dib tl hide-child ph1 ph2-ns">
+        <li class="top-nav-menu-trigger dib tl ph1 ph2-l">
           <a class="link dim dib dark-gray f6 f5-l b ttu mb3" href="#">Resources &amp; Media</a>
-          <div class="pv3 bg-light-yellow child absolute z-9999">
-            <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">articles</a>
+          <div class="top-nav-menu pv3 bg-light-yellow absolute z-9999">
+            <span role="button" class="top-nav-menu-close-btn fr mr4 dn-ns">Close</span>
+            <a href="#" class="link db ph4 pv2 mt4 mt0-ns fs6 hover-bg-white">articles</a>
             <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">services</a>
             <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">series</a>
             <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">songs</a>
@@ -60,10 +63,11 @@
             <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">videos</a>
           </div>
         </li>
-        <li class="dib tl hide-child ph1 ph2-ns pr5-l">
+        <li class="top-nav-menu-trigger dib tl ph1 ph2-m pl2-l pr5-l">
           <a class="link dim dib dark-gray f6 f5-l b ttu mb3" href="#">Connect @ Northland</a>
-          <div class="pv3 bg-light-yellow child absolute z-9999">
-            <a href="/calendar" class="link db ph4 pv2 fs6 hover-bg-white">calendar</a>
+          <div class="top-nav-menu pv3 bg-light-yellow absolute z-9999">
+            <span role="button" class="top-nav-menu-close-btn fr mr4 dn-ns">Close</span>
+            <a href="/calendar" class="link db ph4 pv2 mt4 mt0-ns fs6 hover-bg-white">calendar</a>
             <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">children</a>
             <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">classes</a>
             <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">distributed <span
@@ -83,7 +87,7 @@
             <a href="#" class="link db ph4 pv2 fs6 hover-bg-white">women</a>
           </div>
         </li>
-        <li class="dib  pr5-l">
+        <li class="dib pr5-l">
           <a class="link f6 fw6 dib ml4-ns mt3 mt2-l" href="#" title="About"><span class="light-yellow hover-mid-gray">About</span></a>
           <a class="link f6 fw6 dib ml3 mt3" href="#" title="Need Help"><span class="light-yellow hover-mid-gray">Need Help</span></a>
           <a class="link f6 fw6 dib ml3 mt3" href="#" title="Give"><span class="light-yellow hover-mid-gray">Give</span></a>
